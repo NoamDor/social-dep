@@ -16,7 +16,7 @@ export class NewRequestComponent implements OnInit {
   ngOnInit(): void {
     this.requestForm = this.formBuilder.group({
       creatorName: ['', Validators.required],
-      clientName: [],
+      clientName: ['', Validators.required],
       clientId: [],
       phoneNum:[],
       address: [],
@@ -31,6 +31,7 @@ export class NewRequestComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true;
+    console.log(this.requestForm.value)
   }
 
 }

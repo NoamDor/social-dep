@@ -1,1 +1,69 @@
-<p>new-request works!</p>
+<div class="card m-3 req">
+    <form [formGroup]="requestForm" (ngSubmit)="onSubmit()">
+        <div class="form-row">
+            <div class="form-group col-3">
+                <label class="req">שם יוצר הפנייה</label>
+                <input type="text" formControlName="creatorName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.creatorName.errors }" />
+                <div *ngIf="submitted && f.creatorName.errors" class="invalid-feedback">
+                    <div *ngIf="f.creatorName.errors.required">נדרש להזין את שם יוצר הבקשה</div>
+                </div>
+            </div>
+            <div class="form-group col-3">
+                <label class="req">שם הפונה</label>
+                <input type="text" formControlName="clientName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.clientName.errors }" />
+                <div *ngIf="submitted && f.clientName.errors" class="invalid-feedback">
+                    <div *ngIf="f.clientName.errors.required">נדרש להזין את שם הפונה</div>
+                </div>
+            </div>
+            <div class="form-group col-3">
+                <label class="req">מספר תעודת זהות של הפונה</label>
+                <input type="text" formControlName="clientId" class="form-control" />
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-3">
+                <label class="req">מספר טלפון של הפונה</label>
+                <input type="text" formControlName="phoneNum" class="form-control" />
+            </div>
+            <div class="form-group col-3">
+                <label class="req">כתובת הפונה</label>
+                <input type="text" formControlName="phoneNum" class="form-control" />
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-11">
+                <label class="req">מהות הפנייה</label>
+                <input type="text" formControlName="desc" class="form-control input-large" />
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-11">
+                <label class="req">החלטות והפניות</label>
+                <input type="text" formControlName="decisions" class="form-control input-large" />
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-1">
+                <label>סטטוס הבקשה:</label>
+            </div>
+            <div class="form-group col-1">
+                <select class="form-select" aria-label="Default select example">
+                    <option selected value="new">חדש</option>
+                    <option value="inProgress">בטיפול</option>
+                    <option value="done">טופל</option>
+                  </select>
+            </div>
+            <div class="form-group col-2">
+                <label>קטגוריה</label>
+                <select class="form-select" aria-label="Default select example">
+                    <option selected value="elderly">קשישים</option>
+                    <option value="disability">מוגבלויות</option>
+                    <option value="families">משפחות</option>
+                    <option value="youth">נוער וצעירים</option>
+                    <option value="other">אחר</option>
+                  </select>
+            </div>
+        </div>
+           
+    </form>
+</div>

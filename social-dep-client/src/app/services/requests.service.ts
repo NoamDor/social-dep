@@ -13,6 +13,6 @@ export class RequestsService {
   constructor(private httpClient: HttpClient) { }
 
   createRequest(request: Request): Promise<Request> {
-    return Promise.resolve(null);
+    return this.httpClient.post<Request>(this.REQUEST_FULL_ENDPOINT, request).toPromise();
   }
 }

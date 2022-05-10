@@ -26,8 +26,6 @@ app.get('/request', function(req, res) {
 
 app.post('/request', jsonParser, function(req, res) {
 
-    console.log(req.body);
-
     const newRequest = {
         ...req.body,
         id: id++

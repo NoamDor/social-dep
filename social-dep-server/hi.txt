@@ -4,5 +4,27 @@ change
 POST
 /request
 
+id: 
+creatorName: string
+clientName: string
+clientId: string
+phoneNum:string
+address: string
+desc: string
+decisions: string
+status: 'new', 'done', 'inProgress'
+category: 'elderly', 'disability', 'families', 'youth', 'other'
+
+
 GET
 /request
+id: 
+creatorName: string
+clientName: string
+clientId: string
+phoneNum:string
+address: string
+desc: string
+decisions: string
+status: 'new', 'done', 'inProgress'
+category: 'elderly', 'disability', 'families', 'youth', 'other'
